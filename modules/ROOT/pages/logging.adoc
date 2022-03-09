@@ -1,0 +1,8 @@
+= Logging in Spring
+:description: Logging Support in Sprig.
+
+{description}
+
+== Logging
+
+now is the time for all good men to come to the aid of their country

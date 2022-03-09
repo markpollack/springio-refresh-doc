@@ -1,0 +1,20 @@
+= Core
+:description: Everything you need to know about spring core features.
+
+[.card-section]
+== Features
+
+[.card.card-index]
+--
+xref:ROOT:di.adoc[[.card-title]#Dependency Injection# [.card-body.card-content-overflow]#pass:q[Inject all the things]#]
+--
+
+[.card.card-index]
+--
+xref:ROOT:logging.adoc[[.card-title]#Logging# [.card-body.card-content-overflow]#pass:q[Logging like a pro]#]
+--
+
+[.card.card-index]
+--
+xref:ROOT:aop.adoc[[.card-title]#Aspect Oriented Programming# [.card-body.card-content-overflow]#pass:q[Enabling features such as @Transactional]#]
+--

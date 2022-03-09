@@ -1,0 +1,8 @@
+name: springio
+title: Spring IO
+version: latest
+asciidoc:
+  attributes:
+    page-editable: true
+nav:
+  - modules/ROOT/core-nav.adoc
