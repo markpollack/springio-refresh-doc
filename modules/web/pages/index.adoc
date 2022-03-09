@@ -1,0 +1,49 @@
+= Web
+:description: Everything you need to know about Spring Web features.
+
+[.card-section]
+== Features
+
+[.card.card-index]
+--
+xref:web:webflux.adoc[[.card-title]#Reactive Web# [.card-body.card-content-overflow]#pass:q[Create non blocking web applications]#]
+--
+
+[.card.card-index]
+--
+xref:web:view-technologies.adoc[[.card-title]#View Technologies# [.card-body.card-content-overflow]#pass:q[Use server side templating engines such as Thymeleaf]#]
+--
+
+
+[.card.card-index]
+--
+xref:web:rest.adoc[[.card-title]#RESTful APIs# [.card-body.card-content-overflow]#pass:q[Create RESTful web APIs]#]
+--
+
+[.card.card-index]
+--
+xref:web:graphql.adoc[[.card-title]#GraphQL APIs# [.card-body.card-content-overflow]#pass:q[Create GraphQL web APIs]#]
+--
+
+
+[.card.card-index]
+--
+xref:web:exception-handling.adoc[[.card-title]#Excxeption Handling# [.card-body.card-content-overflow]#pass:q[What to do when things to wrong]#]
+--
+
+[.card.card-index]
+--
+xref:web:client-side.adoc[[.card-title]#Client Side Access# [.card-body.card-content-overflow]#pass:q[Call a web API]#]
+--
+
+[.card.card-index]
+--
+xref:web:cors.adoc[[.card-title]#CORS# [.card-body.card-content-overflow]#pass:q[Cross-Origin Resource Sharing]#]
+--
+
+
+
+
+
+
+

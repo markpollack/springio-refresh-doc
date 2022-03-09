@@ -16,5 +16,31 @@ xref:ROOT:logging.adoc[[.card-title]#Logging# [.card-body.card-content-overflow]
 
 [.card.card-index]
 --
-xref:ROOT:aop.adoc[[.card-title]#Aspect Oriented Programming# [.card-body.card-content-overflow]#pass:q[Enabling features such as @Transactional]#]
+xref:ROOT:validation.adoc[[.card-title]#Validation# [.card-body.card-content-overflow]#pass:q[Validate data in your application]#]
 --
+
+[.card.card-index]
+--
+xref:ROOT:native-compilation.adoc[[.card-title]#Native Compilation# [.card-body.card-content-overflow]#pass:q[Compile your apps to a standalone executable]#]
+--
+
+[.card.card-index]
+--
+xref:ROOT:expression-language.adoc[[.card-title]#Expresssion Language# [.card-body.card-content-overflow]#pass:q[Interpreted small code fragments at runtime]#]
+--
+
+[.card.card-index]
+--
+xref:ROOT:initializr.adoc[[.card-title]#Initializr# [.card-body.card-content-overflow]#pass:q[Create a Spring app with your required dependencies]#]
+--
+
+[.card.card-index]
+--
+xref:ROOT:languages.adoc[[.card-title]#JVM Language Support# [.card-body.card-content-overflow]#pass:q[Use Kotlin and Groovy with Spring]#]
+--
+
+
+
+
+
+
