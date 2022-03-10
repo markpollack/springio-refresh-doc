@@ -1,0 +1,101 @@
+= Exteralized Configuration
+
+== Problem
+
+You haven an application moving throuh dev, test and production environments and you want to change the applications' configuration for each environment without changing the code in the appliation.
+
+== Solution
+
+Spring Cloud Config provies server-side and client-side support for externalized runtime configuration in a distributed system.
+
+== Example Architectures
+
+image::example-architecture.png[,70%]
+
+== Gist - Server side
+
+The configuration for different environment is contained in different property files.
+
+```
+$> git init
+$> echo ‘message=Hello From The Dev environment' > config-client-development.properties
+$> echo 'message=Hello From the Prod environment'      > config-client-production.properties
+$> git add .
+$> git commit -m 'Initial config-client properties'
+```
+
+To create a configuration server, create the following Spring Applicacation and configure it to point to the git repository.
+
+[source,java]
+----
+@EnableConfigServer
+@SpringBootApplication
+public class ConfigurationServerApplication {
+
+      public static void main(String[] args) {
+          SpringApp.ication.run(ConfigurationServerApplication.class, args);
+      }
+}
+----
+
+In `application.properties` you will have 
+
+```
+spring.cloud.config.server.git.uri: file://${user.home}/config-repo
+```
+
+
+== Gist - Client side
+
+In the following Spring Boot application, adding the Spring Cloud Config client library will load 
+the value of the configuration variable named ‘message’ from the Config server. In this case 
+that variable is being accessed inside a Controller class using the @Value annotation. 
+
+If the config server does not have a value for that configuration variable, the default 
+text “Hello default” is used.
+
+To create create an applicaton that pulls information from the config server, after adding the necessary spring cloud client library
+to your application, create the following Spring Applicacation and configure it to point to the config server URL.
+
+[source,java]
+----
+@SpringBootApplication
+public class ConfigurationClientApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(ConfigurationClientApplication.class, args);
+	}
+}
+
+@RefreshScope
+@RestController
+class MessageRestController {
+
+	@Value("${message:Hello default}")
+	private String message;
+
+	@RequestMapping("/message")
+	String getMessage() {
+		return this.message;
+	}
+}
+
+----
+
+In `application.properties` you will have 
+
+```
+spring.config.import=http://localhost:8080/
+```
+
+== Relevant Spring Projects
+
+TODO
+
+== Get Started
+
+TODO
+
+== Related
+
+TODO

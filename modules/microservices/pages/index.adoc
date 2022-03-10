@@ -3,6 +3,11 @@
 [.card-section]
 == Features
 
+[.card.card-index]
+--
+xref:microservices:externalized-configuration.adoc[[.card-title]#Externalized Configuration# [.card-body.card-content-overflow]#pass:q[Retrieve environment specific configuration in your app]#]
+--
+
 
 
 
