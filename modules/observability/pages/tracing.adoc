@@ -1,0 +1,99 @@
+= Distributed Tracing
+
+== Problem
+
+In a microservices architecture a single request from the user results in multiple requests to several microservices.
+
+If there are reported problems from the user relating to performance, how can you go about troubleshooting the system to detect bottlenecks.
+
+== Solution
+
+Each microservice application should be instrumented so that it can record timing and other debug information into the application's log file.
+
+A unique id per user request is recorded in the log so that multiple log files can be corrolated to show the full path of processing through multiple microservices.
+This type of logging data is referred to as tracing data.
+
+https://spring.io/projects/spring-cloud-sleuth[Spring Cloud Seuth] is the project that you can use in your solution to solve this type of problem.
+Spring Cloud Seuth also integrates with https://zipkin.io/[Zipkin].  Zipkin collects the trace data and presents a dashboard used to visualize the data you use for troubleshooting.
+
+== Example Architectures
+
+In the following architecture, a user makes a request to the website `http://billing.my.com`.  The request is first recieved by the microservice `#0` which in turn makes a request to microservice `#1` and microservice `#2`.  In turn, they make other request to other microservices and databases.
+
+The red color of microservice `#1` indicates that it is the microservice that is the source of the bottleneck in request processing.
+
+image::tracing.png[,70%]
+
+== Gist 
+
+By adding Spring Cloud Sleuth library dependencies to your microservice application, you can automatically get trace data for common ingress and egress points from a Spring application.
+
+For example, incoming and outgoing web requests and incoming and outgoing requests for message brokers such as Kafka, JMS, and RabbitMQ.
+
+You do not need to write any code in your applicaiton to get going.
+
+Assuming you have already added Spring Cloud Sleuth dependencies, a simple spring application shown below is all you need to get trace data added to your log file.
+
+[source,java]
+----
+@RestController
+@EnableAutoConfiguration
+public class Example {
+
+    private static final Logger log = LoggerFactory.getLogger(Example.class);
+
+    @RequestMapping("/")
+    String home() {
+        log.info("Hello world!");
+        return "Hello World!";
+    }
+
+    public static void main(String[] args) {
+        SpringApplication.run(Example.class, args);
+    }
+
+}
+----
+
+In the logging output you will see a line such as
+
+
+```
+2020-10-21 12:01:16.285  INFO [backend,0b6aaf642574edd3,0b6aaf642574edd3] 289589 --- [nio-9000-exec-1] Example              : Hello world!
+```
+
+The logging format has been updated to include trace data.  
+
+The trace data has three parts
+
+* application name, 
+* trace id
+* the span id.
+
+The details of what trace id and span id can be found in the https://docs.spring.io/spring-cloud-sleuth/docs/3.1.1/reference/htmlsingle/spring-cloud-sleuth.html#getting-started-terminology[reference documentation]
+
+By adding and additional dependency to each Spring microservice the trace data can be sent to a Zipkin server for visualization.
+
+In the diagram below you can see the total time spent for a single request and how long that single request spent in each microservice instance.
+
+image::zipkin-ui.png[,100%]
+
+== Relevant Spring Projects
+
+TODO
+
+== Get Started
+
+TODO
+
+== Related
+
+TODO
+
+
+
+
+
+
+
+

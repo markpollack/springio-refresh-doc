@@ -1,4 +1,4 @@
-= Core
+= Foundational
 :description: Everything you need to know about spring core features.
 
 [.card-section]

@@ -3,6 +3,15 @@
 [.card-section]
 == Features
 
+[.card.card-index]
+--
+xref:observability:logging.adoc[[.card-title]#Logging# [.card-body.card-content-overflow]#pass:quotes[Capture and log data in your application.]#]
+--
+
+[.card.card-index]
+--
+xref:observability:tracing.adoc[[.card-title]#Distributed Tracing# [.card-body.card-content-overflow]#pass:quotes[Observe requests as they flow through multiple applications.]#]
+--
 
 
 
