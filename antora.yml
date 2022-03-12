@@ -9,9 +9,10 @@ nav:
   - modules/web/web-nav.adoc
   - modules/microservices/microservices-nav.adoc
   - modules/data/data-nav.adoc
-  - modules/messaging/messaging-nav.adoc  
-  - modules/configuration/configuration-nav.adoc    
-  - modules/observability/observability-nav.adoc  
+  - modules/security/security-nav.adoc
+  - modules/messaging/messaging-nav.adoc
+  - modules/configuration/configuration-nav.adoc
+  - modules/observability/observability-nav.adoc
   - modules/batch/batch-nav.adoc
-  - modules/cloud-platforms/cloud-platforms-nav.adoc 
-  - modules/app-orchestraction/app-orchestration-nav.adoc  
+  - modules/cloud-platforms/cloud-platforms-nav.adoc
+  - modules/app-orchestraction/app-orchestration-nav.adoc

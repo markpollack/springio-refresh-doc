@@ -1,0 +1,12 @@
+= Security
+
+[.card-section]
+== Features
+
+[.card.card-index]
+--
+xref:security:web-security.adoc[[.card-title]#Web Security# [.card-body.card-content-overflow]#pass:quotes[Add authentication, authorization and protect against common exploits.]#]
+--
+
+
+
