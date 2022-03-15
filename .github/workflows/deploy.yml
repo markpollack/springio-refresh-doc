@@ -10,7 +10,7 @@ jobs:
     steps:
       - name: do nothing
         run: |
-          echo "did nothing"
+          echo "did nothing, sleeping 10s"
           sleep 10s
       - uses: convictional/trigger-workflow-and-wait@v1.6.0
         with:
