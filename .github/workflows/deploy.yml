@@ -18,3 +18,4 @@ jobs:
           repo: springio-refresh-doc-site
           workflow_file_name: deploy.yml
           github_token: ${{ secrets.G_ACCESS_TOKEN }}
+          github_user: ${{ github.repository_owner }}
