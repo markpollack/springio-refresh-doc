@@ -1,5 +1,19 @@
-- uses: convictional/trigger-workflow-and-wait@v1.6.0
-  with:
-    owner: markpollack
-    repo: springio-refresh-doc-site
-    github_token: ${{ secrets.G_ACCESS_TOKEN }}
+name: Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Do nothing
+    runs-on: ubuntu-latest
+    steps:
+      - name: do nothing
+        run: |
+          echo "did nothing"
+          sleep 10s
+      - uses: convictional/trigger-workflow-and-wait@v1.6.0
+        with:
+          owner: markpollack
+          repo: springio-refresh-doc-site
+          github_token: ${{ secrets.G_ACCESS_TOKEN }}
