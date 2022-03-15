@@ -1,0 +1,5 @@
+- uses: convictional/trigger-workflow-and-wait@v1.6.0
+  with:
+    owner: markpollack
+    repo: springio-refresh-doc-site
+    github_token: ${{ secrets.G_ACCESS_TOKEN }}
