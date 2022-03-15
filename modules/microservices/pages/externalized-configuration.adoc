@@ -88,14 +88,23 @@ In `application.properties` you will have
 spring.config.import=http://localhost:8080/
 ```
 
+[.card-section]
 == Relevant Spring Projects
 
-TODO
+[.card.card-index]
+--
+https://spring.io/projects/spring-cloud-config[[.card-title]#Spring Cloud Config# [.card-body.card-content-overflow]#pass:quotes[Project website]#]
+--
 
-== Get Started
+[.card-section]
+== Related Guides
 
-TODO
+[.card.card-index]
+--
+https://spring.io/guides/gs/centralized-configuration/[[.card-title]#Centralized Configuration# [.card-body.card-content-overflow]#pass:quotes[Learn how to manage application settings from an external, centralized source.]#]
+--
 
-== Related
-
-TODO
+[.card.card-index]
+--
+https://www.baeldung.com/spring-cloud-configuration[[.card-title]#Quick Intro to Spring Cloud Configuration# [.card-body.card-content-overflow]#pass:quotes[Baeldung tutorial.]#]
+--

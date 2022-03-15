@@ -73,7 +73,7 @@ Others including OAuth 2.0 Login, SAML 2.0 Login, Form login are also supported.
 https://spring.io/projects/spring-security[[.card-title]#Spring Security# [.card-body.card-content-overflow]#pass:quotes[Project website]#]
 --
 
-== Get Started
+== Getting started documentation
 
 https://docs.spring.io/spring-security/reference/getting-spring-security.html[Getting Spring Security]
 
@@ -95,7 +95,7 @@ https://spring.io/guides/gs/securing-web[[.card-title]#Spring Security Architect
 
 [.card.card-index]
 --
-https://www.baeldung.com/security-spring[[.card-title]#Security with Spring# [.card-body.card-content-overflow]#pass:quotes[Baeldung tutorials.]#]
+https://www.baeldung.com/security-spring[[.card-title]#Security with Spring# [.card-body.card-content-overflow]#pass:quotes[Baeldung tutorial.]#]
 --
 
 

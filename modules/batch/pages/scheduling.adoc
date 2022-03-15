@@ -1,0 +1,84 @@
+= Scheduling
+
+== Problem
+
+You would like to execute some processing task based on a schedule.
+The task can be as simple as logging information every hour to a log file or transferring files from Amazon S3 to a local computer for processing at a specific time.
+
+== Solution
+
+The Spring Framework provides several annotations to simplify the use of the https://docs.oracle.com/javase/tutorial/essential/concurrency/executors.html[Java's Executor Framework] for task scheduling and asynchronous method invocation.
+The Executor Framework manages the resources required to execute a task.
+The managed resources are threads, allowing processing tasks to execute in a thread pool separate from the rest of the application.
+
+== Example Architecture
+
+image::task-executor.png[,70%]
+
+The Java Executor framework is responsible for scheduling the execution of a task, which we can think of as the logic contained in the method of a Java class.
+Tasks are submitted to a queue and then pulled off the queue and executed on a dedicated thread pool.
+Instead of working with the low-level JDK classes, you can implement this type of architecture using a few Spring annotations on your Java classes.
+
+== Gist
+
+To setup the underlying scheduling infrastructure, add the `@EnableScheduling` annotation to your main Spring Boot application class.
+
+[source,java]
+----
+@SpringBootApplication
+@EnableScheduling
+public class SchedulingTasksApplication {
+
+	public static void main(String[] args) {
+		SpringApplication.run(SchedulingTasksApplication.class);
+	}
+}
+----
+
+The processing that we will schedule to execute is in a class method.
+The method should have a void return type and have any parameters.
+In a complete example, you would use dependency injection to access collaborating objects configured for the processing task.
+
+In this simple gist, the processing will write to `System.out`.
+
+[source,java]
+----
+public class MyTask {
+
+  @Scheduled(cron = "0 0 * * * *")
+  public void task() {
+      System.out.println("task() method executed at the top of every hour every day.")
+  }
+
+}
+----
+
+By default the size of the thread pool is set to one.
+You can change that by setting the following property in `application.properties`
+
+```
+spring.task.scheduling.pool.size=10
+```
+
+Other options on the `@Scheduled` annotation support the execution of the method at a fixed interval of time.
+
+[.card-section]
+== Relevant Spring Projects
+
+[.card.card-index]
+--
+https://spring.io/projects/spring-framework[[.card-title]#Spring Framework# [.card-body.card-content-overflow]#pass:quotes[Project website]#]
+--
+
+[.card-section]
+== Related Guides
+
+[.card.card-index]
+--
+https://spring.io/guides/gs/scheduling-tasks[[.card-title]#Scheduling Tasks# [.card-body.card-content-overflow]#pass:quotes[Learn how to schedule tasks with Spring.]#]
+--
+
+[.card.card-index]
+--
+https://www.baeldung.com/spring-scheduled-tasks[[.card-title]#The @Scheduled Annotation in Spring# [.card-body.card-content-overflow]#pass:quotes[Baeldung tutorials.]#]
+--

@@ -1,8 +1,16 @@
-= Batch Jobs
+= Batch Processing
 
 [.card-section]
 == Features
+[.card.card-index]
+--
+xref:batch:scheduling.adoc[[.card-title]#Scheduling Tasks# [.card-body.card-content-overflow]#pass:q[Execute a task wihtout human intervention.]#]
+--
 
+[.card.card-index]
+--
+xref:batch:file-processing.adoc[[.card-title]#File Processing# [.card-body.card-content-overflow]#pass:q[Using Spring Batch to process files]#]
+--
 
 
 
